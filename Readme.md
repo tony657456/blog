@@ -1,4 +1,4 @@
-
+### 시큐리티 설정
 ```xml
 		<!-- 시큐리티 태그 라이브러리 -->
 		<dependency>
@@ -45,7 +45,7 @@ spring:
       hibernate.format_sql: true
 
 ```
-
+### jsp 파일에서 시큐리티 태그
 ```html
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <sec:authorize access="isAuthenticated()">
