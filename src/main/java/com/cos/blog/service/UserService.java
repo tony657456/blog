@@ -1,7 +1,5 @@
 package com.cos.blog.service;
 
-
-
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +14,15 @@ import lombok.RequiredArgsConstructor;
 public class UserService {
 	private final UserRepository userRepository;
 	private final BCryptPasswordEncoder encode;
+	
+	@Transactional(readOnly = true)
+	public User 회원찾기(String username) {
+		
+		User user = userRepository.findByUsername(username).orElseGet(()->{
+			return new User();
+		});
+		return user; 
+	}
 	
 	@Transactional
 	public void join(User user) {
