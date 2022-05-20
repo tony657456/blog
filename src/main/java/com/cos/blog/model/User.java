@@ -25,10 +25,11 @@ import lombok.RequiredArgsConstructor;
 public class User {
 	
 	@Builder
-	public User(String username, String password, String email) {
+	public User(String username, String password, String email, String oauth) {
 		this.username = username;
 		this.password = password;
 		this.email = email;
+		this.oauth = oauth;
 	}
 
 	@Id
@@ -50,6 +51,8 @@ public class User {
 	// db는 RoleType이라는게 없다.
 	@Enumerated(EnumType.STRING)
 	private RoleType role; // Enum을 쓰는게 좋다. // admin, user, manager
+	
+	private String oauth; // kakao로그인을 한 사람인지 아닌지 구분하기 위한 필드
 	
 	@CreationTimestamp // 시간이 자동 입력
 	private Timestamp createDate;

@@ -4,6 +4,7 @@ import java.security.Principal;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -34,6 +35,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Controller
 public class UserController {
 
+	// cos key는 절대로 노출이 되면 안된다.
+	@Value("${cos.key}")
+	private String cosKey;
+	
 	@Autowired
 	private UserService userService;
 	
@@ -51,7 +56,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/user/auth/kakao/callback")
-	public @ResponseBody String kakaoCallback(String code) {
+	public String kakaoCallback(String code) {
 		
 		// POST방식으로 key=value 데이터를 요청(카카오쪽으로)
 		// Retrofit2
@@ -132,13 +137,14 @@ public class UserController {
 		
 		System.out.println("블로그서버 유저네임: "+kakaoprofile.getKakao_account().getEmail()+"_"+kakaoprofile.getId());
 		System.out.println("블로그서버 이메일: "+kakaoprofile.getKakao_account().getEmail());
-		UUID garbagePassword = UUID.randomUUID();
-		System.out.println("블로그서버 패스워드: "+garbagePassword);
+		// UUID -> 중복되지 않는 어떤 특정 값을 만들어내는 알고리즘
+		System.out.println("블로그서버 패스워드: "+cosKey);
 		
 		User kakaouser = User.builder()
 				.username(kakaoprofile.getKakao_account().getEmail()+"_"+kakaoprofile.getId())
-				.password(garbagePassword.toString())
+				.password(cosKey)
 				.email(kakaoprofile.getKakao_account().getEmail())
+				.oauth("kakao")
 				.build();
 		
 		// 가입자 혹은 비가입자 체크해서 처리
@@ -150,7 +156,7 @@ public class UserController {
 		}
 		
 		// 로그인 처리
-		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(kakaouser.getUsername(), kakaouser.getPassword()));
+		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(kakaouser.getUsername(), cosKey));
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		
 		
