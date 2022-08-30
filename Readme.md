@@ -1,16 +1,16 @@
 ### 시큐리티 설정
 ```xml
-		<!-- 시큐리티 태그 라이브러리 -->
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-taglibs</artifactId>
-		</dependency>
+<!-- 시큐리티 태그 라이브러리 -->
+<dependency>
+	<groupId>org.springframework.security</groupId>
+	<artifactId>spring-security-taglibs</artifactId>
+</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-			<version>2.6.1</version>
-		</dependency>
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-security</artifactId>
+	<version>2.6.1</version>
+</dependency>
 ```
 
 ### 스프링 ViewResolver 설정과 JPA 데이터베이스 연결
