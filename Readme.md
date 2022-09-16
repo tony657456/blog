@@ -14,6 +14,7 @@
 ## 2. 사용 기술
   - Java 11
   - Spring MVC
+  - Spring Security
   - Maven
   - MariaDB
   - JSP
