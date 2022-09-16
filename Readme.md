@@ -1,3 +1,34 @@
+# 😈 Developer Village, DEVIL 👩‍💻
+>개발자 커뮤니티 웹 사이트
+
+:pushpin: [포트폴리오 PPT](https://docs.google.com/presentation/d/1YRAt4UJY--kdYYx2JAo1ukq3rW8kx6nlbPc2kJ8exfU/edit#slide=id.ga6864e8c28_3_0)
+
+<br>
+
+## 1. 제작 기간
+- 2021년 07월 15일 ~ 09월 15일
+
+<br>
+
+## 2. 사용 기술
+  - Java 11
+  - Spring MVC
+  - Maven
+  - MariaDB
+  - JSP
+  - Ajax
+  - JQuery
+
+<br>
+
+
+## 3. 핵심 기능
+
+- 게시글 관리
+- 회원정보 수정
+- Spring Security를 사용한 로그인 / 회원가입 기능
+- 카카오톡 로그인 API를 사용한 로그인 기능
+
 ## 주요 기능
 
 
