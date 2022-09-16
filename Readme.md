@@ -1,7 +1,7 @@
-#  Simple Board
+#  📋 Simple Board 📋
 >개발자 커뮤니티 웹 사이트
 
-:pushpin: [포트폴리오 PPT](https://drive.google.com/file/d/1vPOxTg5NaL1NfEB50H4h10Y1_qMHEdcO/view?usp=sharing)
+:pushpin: [발표 Pdf](https://drive.google.com/file/d/1vPOxTg5NaL1NfEB50H4h10Y1_qMHEdcO/view?usp=sharing)
 
 <br>
 
