@@ -34,7 +34,7 @@
 ## 4. 주요 코드
 
 
-## 시큐리티 인증관리
+### 시큐리티 인증관리
 ```java
 package com.cos.blog.config;
 
@@ -97,7 +97,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 }
 ```
 
-## 카카오톡 api를 이용해서 나의 서버 정보랑 merge 시키기
+### 카카오톡 api를 이용해서 나의 서버 정보랑 merge 시키기
 ```java
 	@GetMapping("/user/auth/kakao/callback")
 	public String kakaoCallback(String code) {
