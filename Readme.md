@@ -1,7 +1,7 @@
-# 😈 Developer Village, DEVIL 👩‍💻
+#  Simple Board
 >개발자 커뮤니티 웹 사이트
 
-:pushpin: [포트폴리오 PPT](https://docs.google.com/presentation/d/1YRAt4UJY--kdYYx2JAo1ukq3rW8kx6nlbPc2kJ8exfU/edit#slide=id.ga6864e8c28_3_0)
+:pushpin: [포트폴리오 PPT](https://drive.google.com/file/d/1vPOxTg5NaL1NfEB50H4h10Y1_qMHEdcO/view?usp=sharing)
 
 <br>
 
